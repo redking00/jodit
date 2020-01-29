@@ -6112,7 +6112,7 @@ var Select = (function () {
                         !_this.isMarker(node)) {
                         nodes_1.push(node);
                     }
-                    return node === end_1 || (node.contains && node && node.contains(end_1));
+                    return node === end_1 || (node && node.contains && node.contains(end_1));
                 }, _this.area, true, 'nextSibling', false);
                 var forEvery_1 = function (current) {
                     if (current.nodeName.match(/^(UL|OL)$/)) {
