@@ -6,7 +6,7 @@
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Jodit Test Document</title>
-	<link rel="stylesheet" href="./build/jodit.css">
+	<link rel="stylesheet" href="./build/jodit.min.css">
 </head>
 <body>
 <div id="box">
@@ -69,26 +69,19 @@ cena quidem posse videamur?
 	</div>
 </div>
 <div id="toolbar"></div>
-<script src="./build/jodit.js"></script>
+<script src="./build/jodit.min.js"></script>
 <script>
-	const editor = new Jodit('#editor', {
-		// toolbarButtonSize: 'large',
-		// height: 100,
-		// "preset": "inline",
-		// toolbar: "#toolbar",
-		tabIndex: 0,
-		// language: 'ru',
-
-		uploader: {
-			url: 'https://xdsoft.net/jodit/connector/index.php?action=fileUpload'
-		},
-
-		filebrowser: {
-			ajax: {
-				url: 'https://xdsoft.net/jodit/connector/index.php'
-			}
-		}
-	})
+	const editor = new Jodit('#editor',{
+  "uploader": {
+    "insertImageAsBase64URI": true
+  },
+  "toolbarButtonSize": "small",
+  "toolbarAdaptive": false,
+  "showCharsCounter": false,
+  "showWordsCounter": false,
+  width:"21cm",
+  "buttons": "source,underline,italic,|,ul,ol,outdent,indent,font,fontsize,brush,paragraph,|,image,table,,align,|,paste,eraser,copyformat"
+})
 </script>
 <style>
 	#box {

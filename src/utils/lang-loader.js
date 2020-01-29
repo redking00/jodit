@@ -27,8 +27,13 @@ module.exports = function (source) {
 			.replace('exports.default =', es5export);
 
 		const box = {};
+		try {
 
-		vm.runInNewContext(content, box);
+			vm.runInNewContext(content, box);
+		}
+		catch(e) {
+			vm.runInNewContext('var exports={};' + content, box);
+		}
 
 		const lang = box.result;
 

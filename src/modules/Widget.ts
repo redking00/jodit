@@ -418,7 +418,7 @@ export namespace Widget {
 					let handler = isFunction(callbacks.upload) ? callbacks.upload : editor.options.uploader.defaultHandlerSuccess;
 
 					if (typeof handler === 'function') {
-						handler.call(editor, {
+						(handler as any).call(editor, {
 							baseurl: resp.baseurl,
 							files: resp.files,
 							isImages: resp.isImages,
